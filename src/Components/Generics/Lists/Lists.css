@@ -1,0 +1,64 @@
+.lists-container {
+  background-color: aqua;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.lists-container>div {
+  height: 85vh;
+  width: 90vw;
+  /* background-color: aquamarine; */
+  box-sizing: border-box;
+  padding: 1em;
+  display: flex;
+  gap: 1em;
+}
+
+.left-lists{
+  height: 100%;
+  width: 20%;
+  /* background-color: rgba(228, 238, 249, 0.5); */
+  border-radius: 0.25em;
+  padding: 0 0.5em;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(78, 94, 109);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.left-lists>h1{
+  font-size: x-large;
+  text-align: center;
+  height: 2.5em;
+}
+
+.left-lists>div{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.list-view{
+  height: 100%;
+  width: 80%;
+  /* background-color: beige; */
+}
+
+.postcard-area {
+  overflow-y: scroll;
+  height: 95%;
+  width: 90%;
+  margin: 1em auto;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1em;
+  padding: 1em;
+  box-sizing: border-box;
+}

@@ -1,0 +1,24 @@
+.userCard {
+  background-color: aliceblue;
+  padding: 1em;
+  box-sizing: border-box;
+  border-radius: 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  height: 5em;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+}
+
+.userCard>img {
+  height: 2.5em;
+  width: 2.5em;
+  background-color: aquamarine;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+.userCard>div:nth-child(2){
+  width: 70%;
+}

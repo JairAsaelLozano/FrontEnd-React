@@ -1,0 +1,127 @@
+#LoginForm,
+#RegisterForm {
+  border-top-right-radius: 1em;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+
+.LR-Forms {
+  background-color: rgba(245, 245, 245, 0.3);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+
+  padding: 3.5em 1em 2em 1em;
+  margin: 5em auto 0em auto;
+
+  display: flex;
+  flex-direction: column;
+
+  width: fit-content;
+  min-width: 300px;
+  height: fit-content;
+}
+
+.LR-Forms button{
+  height: 3em;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 0.5em;
+  cursor: pointer;
+  margin-top: 1em;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.9em;
+  font-weight: 100;
+}
+
+.presentation {
+
+  width: 600px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: scroll;
+}
+
+.presentation_image {
+  object-fit: cover;
+  min-height: 380px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+.background {
+  background-image: url("../../../assets/ImageStock/FondoAcuarela_PinturaArtistica_Lowres.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+}
+
+.shadow {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.shadow-bottom {
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 11px 27px 7px rgba(0, 0, 0, 0.39);
+  box-shadow: 0px 10px 13px -7px #00000099;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+#RegisterForm {
+  display: flex;
+  flex-direction: row;
+}
+
+.container-left {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.container-right {
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: center;
+}
+
+.Form-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.Form-container>div {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.LR-switch {
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  padding: 1em;
+  width: 15em;
+  align-self: flex-end;
+  position: relative;
+  z-index: 1;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  text-align: center;
+}
+
+.LR-switch a{
+  color: rgb(203, 210, 216);
+}

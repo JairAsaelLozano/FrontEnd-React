@@ -1,0 +1,70 @@
+.galery-container {
+  background-color: aqua;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1em;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.galery-section {
+  margin: 0 auto;
+  height: fit-content;
+  width: 80%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.galeryCard-area {
+  /* background-color: aliceblue ; */
+  overflow-y: scroll;
+  height: fit-content;
+  width: 90%;
+  /* margin: 1em auto; */
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  /* grid-template-rows: repeat(3, minmax(0, 1fr)); */
+  gap: 1em;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.createGalery{
+  display: flex;
+}
+
+.createGalery>input {
+  width: 25em;
+  /* background-color: rgb(69, 69, 69); */
+  padding: 1em;
+  font-size: 0.8em;
+  border: 2px solid rgb(73, 73, 80);
+  border-top-left-radius: 0.8em;
+  border-bottom-left-radius: 0.8em;
+  box-sizing: border-box;
+}
+
+.createGalery>button {
+  background-color: rgb(73, 73, 80);
+  color: aliceblue;
+  text-decoration-color: aliceblue;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 100;
+  font-size: 0.8em;
+  /* vertical-align: text-top; */
+  text-decoration-line: none;
+  width: 10em;
+  height: 3.5em;
+  border-style: none;
+  border-top-right-radius: 0.8em;
+  border-bottom-right-radius: 0.8em;
+}

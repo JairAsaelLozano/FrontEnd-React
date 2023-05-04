@@ -1,0 +1,25 @@
+
+.top-cat-pill a {
+  display: block;
+  text-decoration: none;
+  color: rgb(78, 94, 109);
+  padding: .5em;
+  border-radius: 0.5em;
+  /* background-color: aliceblue ; */
+  background-color: rgba(240, 248, 255, 0.2);
+  height: fit-content;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.top-cat-pill * {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.top-cat-pill h1 {
+  font-size: xx-large;
+}
+
+.top-cat-pill p {
+  font-size: small;
+}

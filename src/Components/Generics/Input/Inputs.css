@@ -1,0 +1,108 @@
+.CustomInput {
+  font-size: 1.3em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+
+  margin: 0.2em auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+  width: 70%;
+
+  color: rgb(67, 66, 66);
+}
+
+.CustomInput>input[type=text],
+input[type=password],
+input[type=number],
+input[type=email] {
+  text-align: center;
+  background-color: inherit;
+  padding: 0.1em 1em;
+  font-size: 0.8em;
+  margin: 0;
+  height: 2.5em;
+  width: 20em;
+  border: none;
+  /* color: rgb(232, 236, 238); */
+}
+
+.CustomInput>input[type=button], 
+.CustomInput button {
+  text-align: center;
+  background-color: rgba(231, 228, 228, 0.5);
+  padding: 0.1em 1em;
+  font-size: 1.2em;
+  margin: 1em auto;
+  height: 2.5em;
+  width: 20em;
+  border: none;
+  border-radius: 0.5em;
+  color: rgb(51, 102, 122);
+  box-shadow: 0 10px 30px rgba(71, 71, 71, 0.1), 0 1px 8px rgba(108, 108, 108, 0.2);
+  transition: all 0.2s;
+}
+
+.CustomInput>input[type=button]:hover,
+.CustomInput>button:hover {
+  background-color: rgba(103, 127, 121, 0.5);
+  color: rgb(173, 225, 189);
+}
+
+.CustomInput>input[type=button]:active,
+.CustomInput>button:active {
+  background-color: rgba(124, 235, 179, 0.5);
+  /* color: aliceblue; */
+  transform: scale(0.88);
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.CustomInput>.InputLine {
+  height: 1px;
+  width: 100%;
+  background-color: steelblue;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  /* border-bottom: 1px solid steelblue; */
+}
+
+#preview-image {
+  background-color: aliceblue;
+  width: 150px;
+  height: 150px;
+  clip-path: circle();
+  object-fit: cover;
+  margin: 0em auto;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+}
+
+.custom-file-btn {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 1px solid #050505;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 0.5em;
+}
+
+.custom-file-btn:hover {
+  /* background-color: #ccc; */
+  transform: scale(0.98);
+}
+
+.custom-file-btn input[type=file] {
+  display: none;
+}

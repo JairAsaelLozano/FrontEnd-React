@@ -1,0 +1,12 @@
+.galeryPost{
+  height: 15em;
+  width: 100%;
+  background-color: rgba(29, 28, 28, 0.25);
+  border-radius: 0.25em;
+}
+
+.galeryPost>img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

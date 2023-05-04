@@ -1,0 +1,28 @@
+.comment-pill {
+  background-color: aliceblue;
+  /* margin: 1em; */
+  padding: 1em;
+  box-sizing: border-box;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1em;
+  border-radius: 0.5em;
+  flex-direction: column;
+}
+.comment-pill>.user-info{
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 1em;
+}
+.comment-pill>.user-info>img {
+  height: 2.5em;
+  width: 2.5em;
+  background-color: aquamarine;
+  box-sizing: border-box;
+  border-radius: 50%;
+}

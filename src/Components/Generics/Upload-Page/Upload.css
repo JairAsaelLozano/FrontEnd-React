@@ -1,0 +1,169 @@
+.upload-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: aqua;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 1em;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.upload-section {
+  margin: 0 auto;
+  height: 95%;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.upload-section > div{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.upload-section > div:nth-child(1){
+  margin-left: 5em;
+}
+.upload-section > div:nth-child(2){
+  justify-content: flex-end;
+}
+
+.upload-section > div:nth-child(2) > button{
+  width: 5em;
+  height: 2.5em;
+}
+
+.img-post-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0 auto;
+  width: 35em;
+  padding: 2.5em;
+  box-sizing: border-box;
+  height: 60%;
+  background-color: rgba(240, 248, 255, 0.5);
+}
+
+.img-post-upload>label {
+  margin: 1em 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 1px solid #151515;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 0.5em;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.img-post-upload>label:hover {
+  transform: scale(0.98);
+}
+
+.img-post-upload>label:active {
+  transform: scale(1);
+}
+
+
+input[name="uploadimagepost"]{
+  display: none;
+}
+
+.img-post-preview {
+  width: 25em;
+  height: 15em;
+  margin: 0 auto;
+  border-style: dashed;
+  border-radius: 1em;
+}
+
+.img-post-preview > img{
+  width: 100%;
+  height: 100%;
+  background-color: aliceblue;
+  border-radius: 1em;
+  object-fit: contain;
+}
+
+.extra-post-stuff {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: 0 auto;
+  width: 35em;
+  padding: 1em;
+  box-sizing: border-box;
+  height: 60%;
+  background-color: rgba(240, 248, 255, 0.5);
+}
+
+.post-input {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 3.5em;
+  box-sizing: border-box;
+  border-style: none;
+  padding: 1em 2em;
+  font-size: medium;
+}
+
+.border-el {
+  border-radius: 0.5em;
+}
+
+.cat-input {
+  border-top-right-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+}
+
+.cat-section {
+  background-color: rgba(250, 250, 250, 0.6);
+  padding: 1em;
+  box-sizing: border-box;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  /* border-radius: 0.5em; */
+}
+
+.cat-section p {
+  font-size: large;
+  font-weight: 500;
+  color: rgb(50, 50, 50);
+}
+
+.cat-section>div {
+  display: flex;
+  overflow-x: scroll;
+  align-items: center;
+  height: 3em;
+  gap: 0.2em;
+}
+
+.cat-section .cat-pill {
+  background-color: rgb(60, 62, 71);
+  color: aliceblue  ;
+  display: block;
+  min-width: 5em;
+  height: 1.5em;
+  text-align: center;
+  padding: 0.45em;
+  /* margin: 0.5em; */
+  border-radius: 1em;
+  font-size: small;
+  font-weight: 400;
+  cursor: pointer;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

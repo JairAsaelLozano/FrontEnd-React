@@ -1,0 +1,18 @@
+.edit-forms{
+  display: flex;
+  padding: 2.5em 1em;
+  align-items: flex-end;
+}
+
+#form-editinfo{
+  padding: 1.5em;
+  box-sizing: border-box;
+}
+
+#form-editinfo > textarea {
+  margin: 1em 0;
+  border-style: solid;
+  box-sizing: border-box;
+  height: 5.5em;
+  resize: none;
+}
