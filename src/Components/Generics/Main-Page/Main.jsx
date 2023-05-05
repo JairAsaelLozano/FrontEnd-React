@@ -195,7 +195,7 @@ function Main() {
         </section>
         <section className="acrylback right-section">
           <div className="top-content">
-            <img src="" alt="imagen perfil" />
+            <img src={data.Image.secure_url} alt="imagen perfil" />
             <h1>{data.UserName}</h1>
           </div>
           <div className="fill-content">
