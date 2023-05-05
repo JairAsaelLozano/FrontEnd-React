@@ -5,81 +5,81 @@ import Post from "../Post/Post"
 import CategoryPill from "./Categories-Pills/CategoryPill"
 import { useNavigate } from 'react-router-dom'
 
-const useFetchPosts = () => {
-  console.log("USERFTCHPOSTS");
-  const [data, setData] = useState(null)
+// const useFetchPosts = () => {
+//   console.log("USERFTCHPOSTS");
+//   const [data, setData] = useState(null)
 
-  useEffect(() => {
-    const dataFetch = async () => {
-      const fetchresult = await (
-        await fetch('https://backendweb2-prueba-production.up.railway.app/api/posts/allposts', {
-          method: 'GET',
-        })
-      ).json();
+//   useEffect(() => {
+//     const dataFetch = async () => {
+//       const fetchresult = await (
+//         await fetch('https://backendweb2-prueba-production.up.railway.app/api/posts/allposts', {
+//           method: 'GET',
+//         })
+//       ).json();
 
-      setData(fetchresult.PostsFound)
-    }
+//       setData(fetchresult.PostsFound)
+//     }
 
-    dataFetch()
-  }, [])
+//     dataFetch()
+//   }, [])
 
-  return data
-}
+//   return data
+// }
 
-const getCategorys = () => {
-  console.log("GETCATEGORYS.....");
-  const [data, setData] = useState(null)
+// const getCategorys = () => {
+//   console.log("GETCATEGORYS.....");
+//   const [data, setData] = useState(null)
 
-  useEffect(() => {
-    const dataFetch = async () => {
-      const fetchresult = await (
-        await fetch('https://backendweb2-prueba-production.up.railway.app/api/category/', {
-          method: 'GET',
-        })
-      ).json();
+//   useEffect(() => {
+//     const dataFetch = async () => {
+//       const fetchresult = await (
+//         await fetch('https://backendweb2-prueba-production.up.railway.app/api/category/', {
+//           method: 'GET',
+//         })
+//       ).json();
 
-      setData(fetchresult)
-    }
+//       setData(fetchresult)
+//     }
 
-    dataFetch()
-  }, [])
+//     dataFetch()
+//   }, [])
 
-  return data
-}
+//   return data
+// }
 
-const GetProfileWithVerify = () => {
-  console.log("GETPROFILEWITHVERIFY....");
-  const [data, setData] = useState(null)
-  const nav = useNavigate()
-  useEffect(() => {
-    let ignore = false;
-    const token = sessionStorage.getItem("Token");
-    const intento = async () => {
-      const peticion = await fetch('https://backendweb2-prueba-production.up.railway.app/auth/getonlyperfil', {
-        method: 'POST',
-        headers: {
-          'x-access-token': token
-        }
-      })
-      const res = await peticion.json()
-      if (res.success == true) {
-        if (!ignore) {
-          setData(res.data)
-        }
-      }
-      else {
-        alert("Porfavor haz login antes de acceder a Perfil")
-        nav('/home');
-      }
-    }
-    intento();
-    return () => {
-      ignore = true;
-    };
-  }, [])
+// const GetProfileWithVerify = () => {
+//   console.log("GETPROFILEWITHVERIFY....");
+//   const [data, setData] = useState(null)
+//   const nav = useNavigate()
+//   useEffect(() => {
+//     let ignore = false;
+//     const token = sessionStorage.getItem("Token");
+//     const intento = async () => {
+//       const peticion = await fetch('https://backendweb2-prueba-production.up.railway.app/auth/getonlyperfil', {
+//         method: 'POST',
+//         headers: {
+//           'x-access-token': token
+//         }
+//       })
+//       const res = await peticion.json()
+//       if (res.success == true) {
+//         if (!ignore) {
+//           setData(res.data)
+//         }
+//       }
+//       else {
+//         alert("Porfavor haz login antes de acceder a Perfil")
+//         nav('/home');
+//       }
+//     }
+//     intento();
+//     return () => {
+//       ignore = true;
+//     };
+//   }, [])
 
-  return data
-}
+//   return data
+// }
 
 function Main() {
   const [posts, setPosts] = useState(null) // custom hook para recibir los posts del fetch
@@ -119,9 +119,7 @@ function Main() {
     })
     const res = await peticion.json()
     if (res.success == true) {
-      if (!ignore) {
-        setData(res.data)
-      }
+      setData(res.data)
     }
     else {
       alert("Porfavor haz login antes de acceder a Perfil")
