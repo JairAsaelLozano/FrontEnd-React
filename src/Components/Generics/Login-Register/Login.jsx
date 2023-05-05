@@ -2,7 +2,7 @@ import './LRForms.css'
 import { FormInput } from '../Input/FormInput'
 import Presentation from './Presentation'
 import { useContext, useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import LoginContext from '../../../Context/User/user.context'
 
 function Login() {
@@ -54,7 +54,7 @@ function Login() {
               <button className='btn-anim' type="submit">Entrar</button>
             </form>
             <div className='LR-switch shadow-bottom'>
-              <a href="/register">¿No tienes una cuenta? Unete!</a>
+              <Link href="/register">¿No tienes una cuenta? Unete!</Link>
             </div>
           </div>
         </div>

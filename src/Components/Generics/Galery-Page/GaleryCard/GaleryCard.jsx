@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./GaleryCard.css"
+import { Link } from 'react-router-dom'
 
 function GaleryCard({ galeryInfo }) {
 
@@ -7,7 +8,7 @@ function GaleryCard({ galeryInfo }) {
 
   return (
     <div className="galeryCard">
-      <a href={`/galery/${galeryInfo._id}`}>
+      <Link href={`/galery/${galeryInfo._id}`}>
         <div>
           {
             arreglo.map((elemento, indice) => (
@@ -18,7 +19,7 @@ function GaleryCard({ galeryInfo }) {
           }
         </div>
         <p>{galeryInfo.GaleryName}</p>
-      </a>
+      </Link>
     </div>
   )
 }

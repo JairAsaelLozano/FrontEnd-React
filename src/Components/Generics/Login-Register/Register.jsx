@@ -3,6 +3,7 @@ import './LRForms.css'
 import { FormInput, FormImgUpload } from '../Input/FormInput'
 import Presentation from './Presentation'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function Register() {
   const [_email, setEmail] = useState("")
@@ -11,7 +12,7 @@ function Register() {
   const [_password, setPassword] = useState("")
   const [_confirmpassword, setConfirmPassword] = useState("")
   const [_selectedfile, setSelectedFile] = useState(null)
-  
+
   const handleRegister = async (e) => {
     e.preventDefault();
 
@@ -29,7 +30,7 @@ function Register() {
       //   "Content-Type": "multipart/form-data",
       // },
       body: data
-      }).json()
+    }).json()
     // if(peticion.success == true){  //TODO RETURN LOGIN
     //   window.location.href = '/login';
     // }
@@ -61,7 +62,7 @@ function Register() {
               </div>
             </form>
             <div className='LR-switch shadow-bottom'>
-              <a href="/login">¿ya tienes cuenta? Inicia sesion aqui!</a>
+              <Link href="/login">¿ya tienes cuenta? Inicia sesion aqui!</Link>
             </div>
           </div>
         </div>

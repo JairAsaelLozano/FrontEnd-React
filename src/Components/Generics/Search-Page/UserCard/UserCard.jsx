@@ -1,14 +1,15 @@
 import "./UserCard.css"
+import { Link } from 'react-router-dom'
 
-function UserCard({srcImg, username, postcount, id}) {
+function UserCard({ srcImg, username, postcount, id }) {
   return (
-    <a href={`/profile/${id}`}>     
+    <Link href={`/profile/${id}`}>
       <div className="userCard">
         <img src={srcImg} alt="imagen de usuario" />
         <div>{username}</div>
         <div>#{postcount} publicaciones</div>
       </div>
-      </a>
+    </Link>
   )
 }
 
