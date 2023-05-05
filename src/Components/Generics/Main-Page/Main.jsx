@@ -89,6 +89,7 @@ function Main() {
   const nav = useNavigate()
 
   const obtenerPublicaciones = async () => {
+    console.log("GETPOSTS......")
     const fetchresult = await (
       await fetch('https://backendweb2-prueba-production.up.railway.app/api/posts/allposts', {
         method: 'GET',
