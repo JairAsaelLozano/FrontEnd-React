@@ -96,6 +96,7 @@ function Main() {
       })
     ).json();
     setPosts(fetchresult.PostsFound)
+    console.log(fetchresult.PostsFound)
   }
 
   const obtenerCategorias = async () => {
@@ -106,6 +107,7 @@ function Main() {
       })
     ).json();
     setCategories(fetchresult)
+    console.log(fetchresult)
   }
 
   const verificarPerfilYObtenerDatos = async () => {
@@ -120,6 +122,7 @@ function Main() {
     const res = await peticion.json()
     if (res.success == true) {
       setData(res.data)
+      console.log(res.data)
     }
     else {
       alert("Porfavor haz login antes de acceder a Perfil")
