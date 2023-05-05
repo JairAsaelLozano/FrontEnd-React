@@ -2,12 +2,11 @@ import { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
 import "./Main.css"
 import Post from "../Post/Post"
-import ModalPost from "../Post/Modal-Post/ModalPost"
-import ModalList from "../Lists/Modal-List/ModalList"
 import CategoryPill from "./Categories-Pills/CategoryPill"
 import { useNavigate } from 'react-router-dom'
 
 const useFetchPosts = () => {
+  console.log("USERFTCHPOSTS");
   const [data, setData] = useState(null)
 
   useEffect(() => {
@@ -28,6 +27,7 @@ const useFetchPosts = () => {
 }
 
 const getCategorys = () => {
+  console.log("GETCATEGORYS.....");
   const [data, setData] = useState(null)
 
   useEffect(() => {
@@ -48,6 +48,7 @@ const getCategorys = () => {
 }
 
 const GetProfileWithVerify = () => {
+  console.log("GETPROFILEWITHVERIFY....");
   const [data, setData] = useState(null)
   const nav = useNavigate()
   useEffect(() => {
@@ -68,7 +69,7 @@ const GetProfileWithVerify = () => {
       }
       else {
         alert("Porfavor haz login antes de acceder a Perfil")
-        nav('../home');
+        nav('/home');
       }
     }
     intento();
