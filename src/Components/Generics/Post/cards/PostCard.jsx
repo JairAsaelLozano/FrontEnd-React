@@ -1,9 +1,9 @@
 import "./PostCard.css"
-
+import {Link} from "react-router-dom"
 function PostCard({ img, title, id, imguser, usrnickname }) {
 
   return (
-    <a href={`/post/${id}`}>
+    <Link to={`/post/${id}`}>
       <div className="post-card-preview">
         <img src={img} alt="post image" />
         <div>
@@ -11,7 +11,7 @@ function PostCard({ img, title, id, imguser, usrnickname }) {
           <span>{title}</span>
         </div>
       </div>
-    </a>
+    </Link>
   )
 }
 
