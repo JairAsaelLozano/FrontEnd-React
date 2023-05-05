@@ -9,7 +9,7 @@ const getpostinfo = (id) => {
   useEffect(() => {
     const dataFetch = async () => {
       const fetchresult = await (
-        await fetch(`http://localhost:3000/api/posts/${id}`, {
+        await fetch(`https://backendweb2-prueba-production.up.railway.app/api/posts/${id}`, {
           method: 'GET',
         })
       ).json();
@@ -30,7 +30,7 @@ const getcomments = (id_post) => {
   useEffect(() => {
     const dataFetch = async () => {
       const fetchresult = await (
-        await fetch(`http://localhost:3000/api/coments/getcoments/${id_post}`, {
+        await fetch(`https://backendweb2-prueba-production.up.railway.app/api/coments/getcoments/${id_post}`, {
           method: 'GET',
         })
       ).json();
@@ -61,7 +61,7 @@ function PostPage() {
     DataToSend.append("id_post", prueba.Post._id)
     DataToSend.append("content", content)
 
-    const peticion = await fetch('http://localhost:3000/api/coments/', {
+    const peticion = await fetch('https://backendweb2-prueba-production.up.railway.app/api/coments/', {
       method: 'POST',
       headers: {
         'x-access-token': token

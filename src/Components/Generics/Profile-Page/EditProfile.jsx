@@ -12,7 +12,7 @@ const verify = () => {
   useEffect(() => {
     const token = sessionStorage.getItem("Token");
     const intento = async () => {
-      const peticion = await fetch('http://localhost:3000/auth/getonlyperfil', {
+      const peticion = await fetch('https://backendweb2-prueba-production.up.railway.app/auth/getonlyperfil', {
         method: 'POST',
         headers: {
           'x-access-token': token
@@ -89,7 +89,7 @@ function EditProfile({ openModal, onCloseFn, prevImg }) {
     DataToSend.append("File", newImage)
     
     console.log(DataToSend)
-    fetch(`http://localhost:3000/auth/editperfil`, {
+    fetch(`https://backendweb2-prueba-production.up.railway.app/auth/editperfil`, {
       method: 'PUT',
       headers: {
         'x-access-token': token,
@@ -126,7 +126,7 @@ function EditProfile({ openModal, onCloseFn, prevImg }) {
 
     
     console.log(DataToSend)
-    fetch(`http://localhost:3000/auth/cambiarcontrasena`, {
+    fetch(`https://backendweb2-prueba-production.up.railway.app/auth/cambiarcontrasena`, {
       method: 'PUT',
       headers: {
         'x-access-token': token,

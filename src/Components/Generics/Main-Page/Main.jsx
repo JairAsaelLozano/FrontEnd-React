@@ -12,7 +12,7 @@ const useFetchPosts = () => {
   useEffect(() => {
     const dataFetch = async () => {
       const fetchresult = await (
-        await fetch('http://localhost:3000/api/posts/allposts', {
+        await fetch('https://backendweb2-prueba-production.up.railway.app/api/posts/allposts', {
           method: 'GET',
         })
       ).json();
@@ -32,7 +32,7 @@ const getCategorys = () => {
   useEffect(() => {
     const dataFetch = async () => {
       const fetchresult = await (
-        await fetch('http://localhost:3000/api/category/', {
+        await fetch('https://backendweb2-prueba-production.up.railway.app/api/category/', {
           method: 'GET',
         })
       ).json();
@@ -53,7 +53,7 @@ const GetProfileWithVerify = () => {
     let ignore = false;
     const token = sessionStorage.getItem("Token");
     const intento = async () => {
-      const peticion = await fetch('http://localhost:3000/auth/getonlyperfil', {
+      const peticion = await fetch('https://backendweb2-prueba-production.up.railway.app/auth/getonlyperfil', {
         method: 'POST',
         headers: {
           'x-access-token': token

@@ -24,7 +24,7 @@ function Register() {
 
     console.log(_selectedfile)
     console.log(data)
-    const peticion = fetch('http://localhost:3000/auth/Register', {
+    const peticion = fetch('https://backendweb2-prueba-production.up.railway.app/auth/Register', {
       method: 'POST',
       // headers: {
       //   "Content-Type": "multipart/form-data",

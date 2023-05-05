@@ -15,7 +15,7 @@ import { useContext, useEffect, useState } from 'react'
 import UserState from '../Context/User/user.state'
 import LoginContext from '../Context/User/user.context'
 
-const socket = io('http://localhost:3000')
+const socket = io('https://backendweb2-prueba-production.up.railway.app')
 
 // function AppHeaderLogged() {
 

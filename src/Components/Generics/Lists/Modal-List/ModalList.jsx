@@ -8,7 +8,7 @@ const getpostinfo = (id_post) => {
   useEffect(() => {
     const dataFetch = async () => {
       const fetchresult = await (
-        await fetch(`http://localhost:3000/api/posts/${id_post}`, {
+        await fetch(`https://backendweb2-prueba-production.up.railway.app/api/posts/${id_post}`, {
           method: 'GET',
         })
       ).json();
@@ -32,7 +32,7 @@ function ModalList({ id_post, openModal, onCloseFn }) {
   const obtenerListas = async () => {
     const token = sessionStorage.getItem("Token");
     const fetchresult = await (
-      await fetch(`http://localhost:3000/api/lists/user/Lists`, {
+      await fetch(`https://backendweb2-prueba-production.up.railway.app/api/lists/user/Lists`, {
         method: 'GET',
         headers: {
           'x-access-token': token
@@ -61,7 +61,7 @@ function ModalList({ id_post, openModal, onCloseFn }) {
     const DataToSend = new FormData();
     DataToSend.append("listname", content)
 
-    const peticion = await fetch('http://localhost:3000/api/lists/', {
+    const peticion = await fetch('https://backendweb2-prueba-production.up.railway.app/api/lists/', {
       method: 'POST',
       headers: {
         'x-access-token': token

@@ -23,7 +23,7 @@ function Login() {
     data.append("Password", _password)
 
 
-    const peticion = await fetch('http://localhost:3000/auth/login', {
+    const peticion = await fetch('https://backendweb2-prueba-production.up.railway.app/auth/login', {
       method: 'POST',
       body: data
     })

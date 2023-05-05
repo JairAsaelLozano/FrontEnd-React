@@ -12,7 +12,7 @@ function GaleryView() {
   const getGaleryList = async () => {
     const token = sessionStorage.getItem("Token");
     const fetchresult = await (
-      await fetch(`http://localhost:3000/api/galery/obtenerGalerias/imagenes/${id}`, {
+      await fetch(`https://backendweb2-prueba-production.up.railway.app/api/galery/obtenerGalerias/imagenes/${id}`, {
         method: 'GET',
         headers: {
           'x-access-token': token
@@ -45,7 +45,7 @@ function GaleryView() {
     DataToSend.append("File", selectedFile)
 
     const peticion = await (
-      await fetch('http://localhost:3000/api/galery/AddimgToGalery', {
+      await fetch('https://backendweb2-prueba-production.up.railway.app/api/galery/AddimgToGalery', {
         method: 'PUT',
         headers: {
           'x-access-token': token

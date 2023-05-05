@@ -13,7 +13,7 @@ function ListLink({id, name, post}) {
     DataToSend.append("PostDescription" , post.Post.DescriptionPost)
     DataToSend.append("ListId" , id)
     
-    const peticion = await fetch('http://localhost:3000/api/lists/addPost', {
+    const peticion = await fetch('https://backendweb2-prueba-production.up.railway.app/api/lists/addPost', {
       method: 'PUT',
       headers: {
         'x-access-token': token

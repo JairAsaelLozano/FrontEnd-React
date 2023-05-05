@@ -56,7 +56,7 @@ const getPostscategory = (name) => {
   useEffect(() => {
     const dataFetch = async () => {
       const fetchresult = await (
-        await fetch(`http://localhost:3000/api/category/${name}`, {
+        await fetch(`https://backendweb2-prueba-production.up.railway.app/api/category/${name}`, {
           method: 'GET',
         })
       ).json();
@@ -76,7 +76,7 @@ const getUserscategory = (name) => {
   useEffect(() => {
     const dataFetch = async () => {
       const fetchresult = await (
-        await fetch(`http://localhost:3000/auth/users/${name}`, {
+        await fetch(`https://backendweb2-prueba-production.up.railway.app/auth/users/${name}`, {
           method: 'GET',
         })
       ).json();

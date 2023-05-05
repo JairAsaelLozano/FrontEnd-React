@@ -13,7 +13,7 @@ function GaleryPage({ allGaleries }) {
   const getGaleryList = async () => {
     const token = sessionStorage.getItem("Token");
     const fetchresult = await (
-      await fetch(`http://localhost:3000/api/galery`, {
+      await fetch(`https://backendweb2-prueba-production.up.railway.app/api/galery`, {
         method: 'GET',
         headers: {
           'x-access-token': token
@@ -28,7 +28,7 @@ function GaleryPage({ allGaleries }) {
   const getAllGaleries = async () => {
     const token = sessionStorage.getItem("Token");
     const fetchresult = await (
-      await fetch(`http://localhost:3000/api/galery/all`, {
+      await fetch(`https://backendweb2-prueba-production.up.railway.app/api/galery/all`, {
         method: 'GET',
         headers: {
           'x-access-token': token
@@ -43,7 +43,7 @@ function GaleryPage({ allGaleries }) {
   const getGaleriesByUserId = async () => {
     const token = sessionStorage.getItem("Token");
     const fetchresult = await (
-      await fetch(`http://localhost:3000/api/galery/user/${userid}`, {
+      await fetch(`https://backendweb2-prueba-production.up.railway.app/api/galery/user/${userid}`, {
         method: 'GET',
         headers: {
           'x-access-token': token
@@ -69,7 +69,7 @@ function GaleryPage({ allGaleries }) {
     const DataToSend = new FormData();
     DataToSend.append("GaleryName", galeryName)
 
-    const peticion = await fetch('http://localhost:3000/api/galery/', {
+    const peticion = await fetch('https://backendweb2-prueba-production.up.railway.app/api/galery/', {
       method: 'POST',
       headers: {
         'x-access-token': token

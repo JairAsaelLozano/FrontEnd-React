@@ -9,7 +9,7 @@ const getpostinfo = (id_post) => { //OBTENER INFO DEL POST PARA MOSTRAR EN VENTA
   useEffect(() => {
     const dataFetch = async () => {
       const fetchresult = await (
-        await fetch(`http://localhost:3000/api/posts/${id_post}`, {
+        await fetch(`https://backendweb2-prueba-production.up.railway.app/api/posts/${id_post}`, {
           method: 'GET',
         })
       ).json();
@@ -96,7 +96,7 @@ function ModalEdit({ id_post, openModal, onCloseFn }) {
     DataToSend.append("CategoryList", list)
     DataToSend.append("DescriptionPost", description)
     console.log(DataToSend)
-    fetch(`http://localhost:3000/api/posts/editpost/${id_post}`, {
+    fetch(`https://backendweb2-prueba-production.up.railway.app/api/posts/editpost/${id_post}`, {
       method: 'PUT',
       headers: {
         'x-access-token': token,
