@@ -54,9 +54,8 @@ function Lists() {
     obtenerListas()
   }, [])
 
-  console.log(Listas)
-  console.log(changelist)
-  // console.log("soy" + changelist)
+
+
   return (
     <>
       <div className="background lists-container">

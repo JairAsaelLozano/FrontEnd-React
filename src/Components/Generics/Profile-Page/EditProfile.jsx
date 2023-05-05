@@ -80,15 +80,14 @@ function EditProfile({ openModal, onCloseFn, prevImg }) {
     e.preventDefault()
     //confirmacion de la contraseña
     const token = sessionStorage.getItem("Token");
-    console.log(newImage)
+
     const DataToSend = new FormData();
     DataToSend.append("UserName", Username)
     DataToSend.append("Email", Email)
     DataToSend.append("FullName", FullName)
     DataToSend.append("description", Descripcion)
     DataToSend.append("File", newImage)
-    
-    console.log(DataToSend)
+ 
     fetch(`https://backendweb2-prueba-production.up.railway.app/auth/editperfil`, {
       method: 'PUT',
       headers: {
@@ -125,7 +124,8 @@ function EditProfile({ openModal, onCloseFn, prevImg }) {
     DataToSend.append("NewPassword", Newpassword)
 
     
-    console.log(DataToSend)
+
+
     fetch(`https://backendweb2-prueba-production.up.railway.app/auth/cambiarcontrasena`, {
       method: 'PUT',
       headers: {

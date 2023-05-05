@@ -8,7 +8,6 @@ function GaleryPage({ allGaleries }) {
   const [galeryName, setgaleryName] = useState(null)
 
   let { userid } = useParams()
-  // console.log(userid)
 
   const getGaleryList = async () => {
     const token = sessionStorage.getItem("Token");
@@ -91,7 +90,7 @@ function GaleryPage({ allGaleries }) {
       });
 
   }
-  // console.log(galeryList)
+
   return (
     <>
       <div className="background galery-container">

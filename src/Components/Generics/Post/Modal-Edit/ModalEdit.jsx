@@ -46,7 +46,7 @@ function ModalEdit({ id_post, openModal, onCloseFn }) {
   const hack = () =>{
     
     if(para == 0){
-      console.log("a")
+
       let str = prueba.categories
       let arr = str.split(',')
   
@@ -80,7 +80,7 @@ function ModalEdit({ id_post, openModal, onCloseFn }) {
     const newList = list.filter((el, i) => {
       return (i != removeId)
     })
-    console.log(newList)
+
     setList(newList)
     setCategory("")
   }
@@ -95,7 +95,7 @@ function ModalEdit({ id_post, openModal, onCloseFn }) {
     DataToSend.append("TitlePost", title)
     DataToSend.append("CategoryList", list)
     DataToSend.append("DescriptionPost", description)
-    console.log(DataToSend)
+
     fetch(`https://backendweb2-prueba-production.up.railway.app/api/posts/editpost/${id_post}`, {
       method: 'PUT',
       headers: {

@@ -34,7 +34,7 @@ function ListLink({id, name, post}) {
       });
 
   }
-  console.log(post)
+
   return (
     <div className="list">
       <div>

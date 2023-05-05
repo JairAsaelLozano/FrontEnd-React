@@ -36,7 +36,7 @@ const getCategorys = () => {
           method: 'GET',
         })
       ).json();
-      console.log(fetchresult)
+    
       setData(fetchresult)
     }
 
@@ -62,7 +62,7 @@ const GetProfileWithVerify = () => {
       const res = await peticion.json()
       if (res.success == true) {
         if (!ignore) {
-          console.log("verificacion")
+   
           setData(res.data)
         }
       }
@@ -89,8 +89,8 @@ function Main() {
   if (!Posts) return null
   if (!categorys) return null
   if (!prueba) return null
-  console.log(prueba)
-  // console.log(categorys) // custom hook para recibir las categorias del fetch
+
+ 
   const Buscar = async (e) => {
     e.preventDefault();
     var primerCaracter = search.charAt(0);

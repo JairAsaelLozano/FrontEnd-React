@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 
 const getpostinfo = (id_post) => {
   const [data, setData] = useState(null)
-  console.log("getpostinfo24")
+
   useEffect(() => {
     const dataFetch = async () => {
       const fetchresult = await (
@@ -12,8 +12,7 @@ const getpostinfo = (id_post) => {
           method: 'GET',
         })
       ).json();
-      console.log("intentos")
-      console.log(fetchresult.respuesta)
+   
       setData(fetchresult.respuesta)
     }
 
@@ -51,7 +50,7 @@ function ModalList({ id_post, openModal, onCloseFn }) {
   if (!prueba) return null
 
   
-  // console.log(Lists)
+
 
   const crearlista = async (e) => {
     e.preventDefault();

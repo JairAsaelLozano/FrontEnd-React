@@ -32,16 +32,13 @@ function Upload() {
     const newList = list.filter((el, i) => {
       return (i != removeId)
     })
-    console.log(newList)
+
     setList(newList)
     setCategory("")
   }
 
   const test = () => {
-    console.log(selectedFile)
-    console.log(title)
-    console.log(list)
-    console.log(description)
+   
   }
 
   const handleuploadpost = async (e) => {

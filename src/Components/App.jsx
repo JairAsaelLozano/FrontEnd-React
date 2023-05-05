@@ -1,6 +1,6 @@
 import './App.css'
 import { Link, Route, Routes } from 'react-router-dom'
-import io from 'socket.io-client'
+
 import Login from './Generics/Login-Register/Login'
 import Register from './Generics/Login-Register/Register'
 import Main from './Generics/Main-Page/Main'
@@ -15,7 +15,7 @@ import { useContext, useEffect, useState } from 'react'
 import UserState from '../Context/User/user.state'
 import LoginContext from '../Context/User/user.context'
 
-const socket = io('https://backendweb2-prueba-production.up.railway.app')
+
 
 // function AppHeaderLogged() {
 
@@ -42,7 +42,7 @@ function AppHeaderLogin() {
   }, [])
 
   const borrar = () => {
-    console.log("intento de borrar")
+   
     getLogin(false)
     sessionStorage.clear()
   }

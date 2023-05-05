@@ -13,7 +13,7 @@ const getpostinfo = (id) => {
           method: 'GET',
         })
       ).json();
-      console.log("intentos")
+   
 
       setData(fetchresult.respuesta)
     }
@@ -34,7 +34,7 @@ const getcomments = (id_post) => {
           method: 'GET',
         })
       ).json();
-      console.log(fetchresult)
+
       setData(fetchresult)
     }
 

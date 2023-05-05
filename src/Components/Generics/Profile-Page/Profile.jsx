@@ -20,7 +20,7 @@ const GetProfileWithVerify = () => {
       const res = await peticion.json()
       if (res.success == true) {
         if (!ignore) {
-          console.log("verificacion")
+       
           setData(res.data)
         }
       }
@@ -50,7 +50,7 @@ const GetProfileVisit = (id) =>{
       const res = await peticion.json()
       if (res.success == true) {
         if (!ignore) {
-          console.log("verificacion")
+    
           setData(res.data)
         }
       }
@@ -121,7 +121,7 @@ function Profile() {
   const [openModal, setOpenModal] = useState(false)
   
   const isVisit = !(id === undefined)
-  console.log(`isVisit = ${isVisit}`)
+
   const prueba = isVisit ? GetProfileVisit(id) : GetProfileWithVerify();
 
   const handleOpenModal = () => {

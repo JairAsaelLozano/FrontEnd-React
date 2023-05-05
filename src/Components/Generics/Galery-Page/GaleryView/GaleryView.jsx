@@ -36,8 +36,7 @@ function GaleryView() {
   }, [])
 
   const addPostToGalery = async () => {
-    console.log("si esta jalando")
-    console.log("este file vale" + selectedFile)
+
     const token = sessionStorage.getItem("Token");
 
     const DataToSend = new FormData();
@@ -60,8 +59,7 @@ function GaleryView() {
       await getGaleryList();
     }
   }
-  console.log("c")
-  console.log(selectedFile)
+
 
   function handleSelectClick() {
     fileInputRef.current.click();
@@ -69,11 +67,11 @@ function GaleryView() {
 
   function handleFileChange(event) {
     const file = event.target.files[0];
-    console.log("adentro de handlefileChange", file)
+  
     setSelectedFile(file);
   }
 
-  // console.log(imglist)
+
   return (
     <>
       <div className="background galeryview-container">

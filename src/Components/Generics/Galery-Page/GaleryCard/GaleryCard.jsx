@@ -4,7 +4,7 @@ import "./GaleryCard.css"
 function GaleryCard({ galeryInfo }) {
 
   const arreglo = galeryInfo.Images.slice(-4)
-  console.log(arreglo)
+
   return (
     <div className="galeryCard">
       <a href={`/galery/${galeryInfo._id}`}>

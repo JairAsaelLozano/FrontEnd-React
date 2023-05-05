@@ -28,7 +28,7 @@ function Login() {
       body: data
     })
     const res = await peticion.json()
-    console.log(res);
+
     // alert(JSON.stringify(res));
     sessionStorage.setItem("Token", res.token);
     sessionStorage.setItem("UserName", res.UserName);

@@ -22,19 +22,17 @@ function Register() {
     data.append("FullName", _fullname)
     data.append("File", _selectedfile)
 
-    console.log(_selectedfile)
-    console.log(data)
+
     const peticion = fetch('https://backendweb2-prueba-production.up.railway.app/auth/Register', {
       method: 'POST',
       // headers: {
       //   "Content-Type": "multipart/form-data",
       // },
       body: data
-      })
-      .then(res => res.json())
-      .then(res => {
-        console.log(res);
-      });
+      }).json()
+    // if(peticion.success == true){  //TODO RETURN LOGIN
+    //   window.location.href = '/login';
+    // }
   }
 
 

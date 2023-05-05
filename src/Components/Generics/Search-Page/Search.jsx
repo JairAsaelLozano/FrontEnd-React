@@ -60,8 +60,8 @@ const getPostscategory = (name) => {
           method: 'GET',
         })
       ).json();
-      console.log("intentos")
-      console.log(fetchresult)
+   
+
       setData(fetchresult)
     }
 
@@ -80,8 +80,7 @@ const getUserscategory = (name) => {
           method: 'GET',
         })
       ).json();
-      console.log("intentos")
-      console.log(fetchresult)
+
       setData(fetchresult)
     }
 
@@ -93,8 +92,7 @@ const getUserscategory = (name) => {
 
 function Search() {
   let { idCat, qry } = useParams()
-  console.log(idCat)
-  console.log(qry)
+
   return (
     <>
       <div className="background search-container">
