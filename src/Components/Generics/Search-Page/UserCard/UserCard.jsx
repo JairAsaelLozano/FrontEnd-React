@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function UserCard({ srcImg, username, postcount, id }) {
   return (
-    <Link href={`/profile/${id}`}>
+    <Link to={`/profile/${id}`}>
       <div className="userCard">
         <img src={srcImg} alt="imagen de usuario" />
         <div>{username}</div>

@@ -54,7 +54,7 @@ function Login() {
               <button className='btn-anim' type="submit">Entrar</button>
             </form>
             <div className='LR-switch shadow-bottom'>
-              <Link href="/register">¿No tienes una cuenta? Unete!</Link>
+              <Link to="/register">¿No tienes una cuenta? Unete!</Link>
             </div>
           </div>
         </div>

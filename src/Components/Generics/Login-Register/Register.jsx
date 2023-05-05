@@ -62,7 +62,7 @@ function Register() {
               </div>
             </form>
             <div className='LR-switch shadow-bottom'>
-              <Link href="/login">¿ya tienes cuenta? Inicia sesion aqui!</Link>
+              <Link to="/login">¿ya tienes cuenta? Inicia sesion aqui!</Link>
             </div>
           </div>
         </div>

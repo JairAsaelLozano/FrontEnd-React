@@ -8,7 +8,7 @@ function GaleryCard({ galeryInfo }) {
 
   return (
     <div className="galeryCard">
-      <Link href={`/galery/${galeryInfo._id}`}>
+      <Link to={`/galery/${galeryInfo._id}`}>
         <div>
           {
             arreglo.map((elemento, indice) => (
