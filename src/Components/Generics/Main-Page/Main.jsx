@@ -131,6 +131,9 @@ function Main() {
     verificarPerfilYObtenerDatos()
     obtenerCategorias()
     obtenerPublicaciones()
+    console.log(data)
+    console.log(categories)
+    console.log(posts)
   }, [])
 
   const Buscar = async (e) => {
