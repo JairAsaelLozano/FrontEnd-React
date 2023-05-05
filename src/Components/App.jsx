@@ -42,7 +42,7 @@ function AppHeaderLogin() {
   }, [])
 
   const borrar = () => {
-   
+
     getLogin(false)
     sessionStorage.clear()
   }
@@ -80,10 +80,9 @@ function App() {
         <Route path="/profile" element={<Profile />} >
           <Route path=':id' element={<Profile />}></Route>
         </Route>
-        <Route path="/search" element={<Search />} >
-          <Route path='posts/:idCat' element={<Search searchPosts={true} />}></Route>
-          <Route path='users/:qry' element={<Search searchUser={true} />}></Route>
-        </Route>
+        <Route path="/search" element={<Search />} />
+        <Route path='/search/posts/:idCat' element={<Search searchPosts={true} />}></Route>
+        <Route path='/search/users/:qry' element={<Search searchUser={true} />}></Route>
         <Route path="/lists" element={<Lists />} />
         <Route path="/post/:id" element={<PostPage />}></Route>
         <Route path="/galeries" element={<GaleryPage />}></Route>
