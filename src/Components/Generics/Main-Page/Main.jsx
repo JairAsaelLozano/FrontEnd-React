@@ -82,7 +82,7 @@ import { useNavigate } from 'react-router-dom'
 // }
 
 function Main() {
-  const [posts, setPosts] = useState(null) // custom hook para recibir los posts del fetch
+  const [posts, setPosts] = useState([]) // custom hook para recibir los posts del fetch
   const [categories, setCategories] = useState(null);
   const [search, setSearch] = useState(null);
   const [data, setData] = useState(null)
@@ -152,9 +152,9 @@ function Main() {
     }
   }
 
-  if (posts == null) return null
-  if (categories == null) return null
-  if (data == null) return null
+  if (!posts) return null
+  if (!categories) return null
+  if (!data) return null
 
   return (
     <>
@@ -183,6 +183,7 @@ function Main() {
           <div className="simplescroll">
             {
               posts == null || categories.success == false ? null : posts.map((elemento, indice) => {
+                console.log(elemento)
                 return (
                   <div key={indice}>
                     <Post id_post={elemento._id} srcPost={elemento.Image.secure_url}></Post>

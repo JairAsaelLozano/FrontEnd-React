@@ -38,12 +38,9 @@ function Upload() {
     setCategory("")
   }
 
-  const test = () => {
-   
-  }
-
   const handleuploadpost = async (e) => {
     e.preventDefault();
+    e.target.disabled = true
     const token = sessionStorage.getItem("Token");
     const UserName = sessionStorage.getItem("UserName");
 
