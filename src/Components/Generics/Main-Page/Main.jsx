@@ -68,7 +68,7 @@ const GetProfileWithVerify = () => {
       }
       else {
         alert("Porfavor haz login antes de acceder a Perfil")
-        nav('/home');
+        nav('../home');
       }
     }
     intento();
