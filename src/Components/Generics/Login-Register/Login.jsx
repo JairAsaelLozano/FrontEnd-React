@@ -35,8 +35,7 @@ function Login() {
 
     if (res.success == true) {
       getLogin(true)
-      console.log(res.url)
-      // nav(res.url);
+      nav(res.url);
     }
     else {
       alert("Usuario o Contraseña no validos")
