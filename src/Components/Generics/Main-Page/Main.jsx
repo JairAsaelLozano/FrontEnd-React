@@ -37,7 +37,7 @@ const getCategorys = () => {
           method: 'GET',
         })
       ).json();
-    
+
       setData(fetchresult)
     }
 
@@ -82,16 +82,58 @@ const GetProfileWithVerify = () => {
 }
 
 function Main() {
-  const nav = useNavigate()
-  const Posts = useFetchPosts() // custom hook para recibir los posts del fetch
-  const categorys = getCategorys();
+  const [posts, setPosts] = useState(null) // custom hook para recibir los posts del fetch
+  const [categories, setCategories] = useState(null);
   const [search, setSearch] = useState(null);
-  const prueba = GetProfileWithVerify();
-  if (!Posts) return null
-  if (!categorys) return null
-  if (!prueba) return null
+  const [data, setData] = useState(null)
+  const nav = useNavigate()
 
- 
+  const obtenerPublicaciones = async () => {
+    const fetchresult = await (
+      await fetch('https://backendweb2-prueba-production.up.railway.app/api/posts/allposts', {
+        method: 'GET',
+      })
+    ).json();
+    setPosts(fetchresult.PostsFound)
+  }
+
+  const obtenerCategorias = async () => {
+    console.log("GETCATEGORYS.....");
+    const fetchresult = await (
+      await fetch('https://backendweb2-prueba-production.up.railway.app/api/category/', {
+        method: 'GET',
+      })
+    ).json();
+    setCategories(fetchresult)
+  }
+
+  const verificarPerfilYObtenerDatos = async () => {
+    console.log("GETPROFILEWITHVERIFY....");
+    const token = sessionStorage.getItem("Token");
+    const peticion = await fetch('https://backendweb2-prueba-production.up.railway.app/auth/getonlyperfil', {
+      method: 'POST',
+      headers: {
+        'x-access-token': token
+      }
+    })
+    const res = await peticion.json()
+    if (res.success == true) {
+      if (!ignore) {
+        setData(res.data)
+      }
+    }
+    else {
+      alert("Porfavor haz login antes de acceder a Perfil")
+      nav('/home');
+    }
+  }
+
+  useEffect(() => {
+    verificarPerfilYObtenerDatos()
+    obtenerCategorias()
+    obtenerPublicaciones()
+  }, [])
+
   const Buscar = async (e) => {
     e.preventDefault();
     var primerCaracter = search.charAt(0);
@@ -103,8 +145,13 @@ function Main() {
     else {
       nav(`/search/posts/${search}`);
     }
-
   }
+
+  if (!posts) return null
+  if (!categories) return null
+  if (!data) return null
+
+
 
   return (
     <>
@@ -117,10 +164,10 @@ function Main() {
           <div className="top-categories ">
             <div className="simplescroll">
               {
-                Posts == null || categorys.success == false ? null : categorys.AllCategorys.map((elemento, indice) => {
+                posts == null || categories.success == false ? null : categories.AllCategorys.map((elemento, indice) => {
                   return (
                     <div key={indice}>
-                      <CategoryPill CategoryNumber={indice} CategoryName={elemento.CategoryName} ContentCount={elemento.TotalPostsUsing} ></CategoryPill>
+                      <CategoryPill CategoryNumber={indice} CategoryName={elemento.CategoryName} ContentCount={elemento.TotalPostsUsing}></CategoryPill>
                     </div>
                   )
                 })
@@ -132,7 +179,7 @@ function Main() {
         <section className="acrylback mid-section">
           <div className="simplescroll">
             {
-              Posts == null || categorys.success == false ? null : Posts.map((elemento, indice) => {
+              posts == null || categories.success == false ? null : posts.map((elemento, indice) => {
                 return (
                   <div key={indice}>
                     <Post id_post={elemento._id} srcPost={elemento.Image.secure_url}></Post>
@@ -144,15 +191,15 @@ function Main() {
         </section>
         <section className="acrylback right-section">
           <div className="top-content">
-            <img src={prueba.Image.secure_url} alt="imagen perfil" />
-            <h1>{prueba.UserName}</h1>
+            <img src={data.Image.secure_url} alt="imagen perfil" />
+            <h1>{data.UserName}</h1>
           </div>
-          <div className="fill-content">   
+          <div className="fill-content">
             <Link className='btn-anim' to="/upload">Publicacion Nueva</Link>
-            <div className="separator"/>
+            <div className="separator" />
             <Link className='btn-anim' to="/profile">Ver Perfil</Link>
             <Link className='btn-anim' to="/lists">Ver Listas</Link>
-            <div className="separator"/>
+            <div className="separator" />
             <Link className='btn-anim' to="/galeries/all">Ver todas las galerias</Link>
           </div>
         </section>
