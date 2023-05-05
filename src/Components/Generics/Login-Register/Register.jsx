@@ -4,8 +4,10 @@ import { FormInput, FormImgUpload } from '../Input/FormInput'
 import Presentation from './Presentation'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function Register() {
+  const nav = useNavigate()
   const [_email, setEmail] = useState("")
   const [_fullname, setFullName] = useState("")
   const [_username, setUserName] = useState("")
@@ -26,14 +28,11 @@ function Register() {
 
     const peticion = fetch('https://backendweb2-prueba-production.up.railway.app/auth/Register', {
       method: 'POST',
-      // headers: {
-      //   "Content-Type": "multipart/form-data",
-      // },
       body: data
     }).json()
-    // if(peticion.success == true){  //TODO RETURN LOGIN
-    //   window.location.href = '/login';
-    // }
+    if(peticion.success == true){  //TODO RETURN LOGIN
+      nav('/login');
+    }
   }
 
 

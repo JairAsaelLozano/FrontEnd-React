@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import "./Upload.css"
 
 function Upload() {
-
+  const nav = useNavigate()
   const [category, setCategory] = useState("")
-  const [list, setList] = useState(["test", "test2"])
+  const [list, setList] = useState([])
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [selectedFile, setSelectedFile] = useState(null);
@@ -63,7 +64,7 @@ function Upload() {
       .then(res => res.json())
       .then(res => {
         if(res.success == true){
-          window.location.href = res.url;
+          nav(res.url);
         }
         else{
           alert("Error al intentar hacer el post")

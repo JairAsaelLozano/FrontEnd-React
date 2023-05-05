@@ -3,14 +3,6 @@ import PostCard from "../Post/cards/PostCard"
 import { useState, useEffect } from "react"
 import ListPill from "./ListPill"
 
-const ObtenerListasDelUsuario = () => {
-
-}
-
-const GetPostByList = () => {
-
-}
-
 function Lists() {
   const [Listas, setListas] = useState(null)
   const [changelist, setChangelist] = useState(null)
@@ -46,7 +38,7 @@ function Lists() {
       })
     ).json();
     if (fetchresult.success == true) {
-      window.location.reload(false);
+      await obtenerListas()
     }
   }
 

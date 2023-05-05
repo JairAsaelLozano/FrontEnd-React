@@ -1,8 +1,10 @@
 import "./EditProfile.css"
 import { FormInput, FormImgUpload } from "../Input/FormInput"
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 
 const verify = () => {
+  const nav = useNavigate()
   const [previewimg, setPreviewimg] = useState("")
   const [email, setEmail] = useState("")
   const [fullName, setFullname] = useState("")
@@ -21,7 +23,6 @@ const verify = () => {
         .then(res => res.json())
         .then(res => {
           if (res.success == true) {
-  
             setPreviewimg(res.data.Image.secure_url)
             setEmail(res.data.Email)
             setFullname(res.data.FullName)
@@ -30,7 +31,7 @@ const verify = () => {
           }
           else {
             alert("Porfavor haz login antes de acceder a Perfil")
-            window.location.href = '/home';
+            nav('/home');
           }
         })
         .catch(error => {
@@ -98,11 +99,11 @@ function EditProfile({ openModal, onCloseFn, prevImg }) {
       .then(res => res.json())
       .then(res => {
         if (res.success == true) {
-          window.location.href = '/profile';
+          nav('/profile');
         }
         else {
           alert("No puedes editar sin autenticarte antes")
-          window.location.href = '/home';
+          nav('/home');
         }
       })
       .catch(error => {
@@ -136,11 +137,11 @@ function EditProfile({ openModal, onCloseFn, prevImg }) {
       .then(res => res.json())
       .then(res => {
         if (res.success == true) {
-          window.location.href = '/profile';
+          nav('/profile');
         }
         else {
           alert("No puedes editar sin autenticarte antes")
-          window.location.href = '/home';
+          nav('/home');
         }
       })
       .catch(error => {

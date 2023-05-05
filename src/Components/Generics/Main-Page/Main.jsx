@@ -6,6 +6,7 @@ import ModalPost from "../Post/Modal-Post/ModalPost"
 import ModalList from "../Lists/Modal-List/ModalList"
 import CategoryPill from "./Categories-Pills/CategoryPill"
 import { useNavigate } from 'react-router-dom'
+
 const useFetchPosts = () => {
   const [data, setData] = useState(null)
 
@@ -62,13 +63,12 @@ const GetProfileWithVerify = () => {
       const res = await peticion.json()
       if (res.success == true) {
         if (!ignore) {
-   
           setData(res.data)
         }
       }
       else {
         alert("Porfavor haz login antes de acceder a Perfil")
-        nav('../home');
+        nav('/home');
       }
     }
     intento();

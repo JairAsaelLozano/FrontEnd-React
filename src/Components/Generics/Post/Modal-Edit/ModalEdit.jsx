@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import "./ModalEdit.css"
-
+import { useNavigate } from 'react-router-dom'
 
 const getpostinfo = (id_post) => { //OBTENER INFO DEL POST PARA MOSTRAR EN VENTANA MODAL
   const [descripcion, setDescripcion] = useState("")
@@ -13,21 +13,19 @@ const getpostinfo = (id_post) => { //OBTENER INFO DEL POST PARA MOSTRAR EN VENTA
           method: 'GET',
         })
       ).json();
-
       setDescripcion(fetchresult.respuesta.Post.DescriptionPost)
       setTitle(fetchresult.respuesta.Post.TitlePost)
       setCategories(fetchresult.respuesta.Post.CategoryList)
     }
-
+    
     dataFetch()
   }, [])
-
+  
   return { descripcion, title, categories }
 }
 
-
-
 function ModalEdit({ id_post, openModal, onCloseFn }) {
+  const nav = useNavigate()
   const prueba = getpostinfo(id_post)
   const [category, setCategory] = useState("")
   const [list, setList] = useState(["test", "test2"])
@@ -106,11 +104,11 @@ function ModalEdit({ id_post, openModal, onCloseFn }) {
       .then(res => res.json())
       .then(res => {
         if (res.success == true) {
-          window.location.href = '/profile';
+          nav('/profile');
         }
         else {
           alert("No puedes editar sin autenticarte antes")
-          window.location.href = '/home';
+          nav('/home');
         }
       })
       .catch(error => {
