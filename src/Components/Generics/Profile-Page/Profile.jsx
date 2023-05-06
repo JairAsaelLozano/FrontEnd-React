@@ -102,11 +102,13 @@ const deletepost = (id_post) => {
       .then(res => res.json())
       .then(res => {
         if (res.success == true) {
-          window.location.href = '/profile';
+          nav('/profile');
+       
         }
         else {
           alert("No puedes borrar sin autenticarte antes")
-          window.location.href = '/home';
+          nav('/home');
+    
         }
       })
       .catch(error => {
