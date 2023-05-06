@@ -59,6 +59,7 @@ function Post({ isLocalUser, fndelete, srcPost, id_post}) {
         }
       })
     ).json();  
+    console.log(fetchresult)
   }
 
   return (
@@ -73,7 +74,7 @@ function Post({ isLocalUser, fndelete, srcPost, id_post}) {
             isLocalUser == false ? <button onClick={openEditModalfn} className="btn-post" id="btn-post-edit"></button> : null
           }
           <button onClick={view} className="btn-post" id="btn-like-post"></button>
-          <button onClick={like} className="btn-post" id="btn-like-post"></button>
+          <button className="btn-post" id="btn-like-post"></button>
           <button onClick={openListModalfn} className="btn-post" id="btn-save-post"></button>
           <button className="btn-post" id="btn-fav-post"></button>
         </div>
