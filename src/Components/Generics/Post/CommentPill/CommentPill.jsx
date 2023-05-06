@@ -7,7 +7,7 @@ function CommentPill({commentContent, img, user, isOwner }) {
         <div className="user-info">
           <img src={img} alt="user-img" />
           <span>{user}</span>
-          {isOwner ? <button>Editar</button> : null}
+          {/* {isOwner ? <button>Editar</button> : null} */}
         </div>
         <span>{commentContent}</span>
       </div>
