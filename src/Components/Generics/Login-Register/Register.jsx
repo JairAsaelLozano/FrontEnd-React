@@ -29,7 +29,7 @@ function Register() {
     const peticion = fetch('https://backendweb2-prueba-production.up.railway.app/auth/Register', {
       method: 'POST',
       body: data
-    }).json()
+    })
     if(peticion.success == true){  //TODO RETURN LOGIN
       nav('/login');
      
