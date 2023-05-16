@@ -32,7 +32,7 @@ function Register() {
     }).json()
     if(peticion.success == true){  //TODO RETURN LOGIN
       nav('/login');
-      console.log("debi reedireccionar")
+     
     }
   }
 
