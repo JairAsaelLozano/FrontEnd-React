@@ -29,15 +29,10 @@ function Register() {
     const peticion = fetch('https://backendweb2-prueba-production.up.railway.app/auth/Register', {
       method: 'POST',
       body: data
-    }).then( (data) = () => {
-      if(data.success == true){  //TODO RETURN LOGIN
-        nav('/login');
-       
-      }
+    }).json()
+    if(peticion.success == true){  //TODO RETURN LOGIN
+      nav('/login');
     }
-      
-    )
-    
   }
 
 
