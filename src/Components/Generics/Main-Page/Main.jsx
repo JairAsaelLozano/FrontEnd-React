@@ -5,82 +5,6 @@ import Post from "../Post/Post"
 import CategoryPill from "./Categories-Pills/CategoryPill"
 import { useNavigate } from 'react-router-dom'
 
-// const useFetchPosts = () => {
-//   console.log("USERFTCHPOSTS");
-//   const [data, setData] = useState(null)
-
-//   useEffect(() => {
-//     const dataFetch = async () => {
-//       const fetchresult = await (
-//         await fetch('https://backendweb2-prueba-production.up.railway.app/api/posts/allposts', {
-//           method: 'GET',
-//         })
-//       ).json();
-
-//       setData(fetchresult.PostsFound)
-//     }
-
-//     dataFetch()
-//   }, [])
-
-//   return data
-// }
-
-// const getCategorys = () => {
-//   console.log("GETCATEGORYS.....");
-//   const [data, setData] = useState(null)
-
-//   useEffect(() => {
-//     const dataFetch = async () => {
-//       const fetchresult = await (
-//         await fetch('https://backendweb2-prueba-production.up.railway.app/api/category/', {
-//           method: 'GET',
-//         })
-//       ).json();
-
-//       setData(fetchresult)
-//     }
-
-//     dataFetch()
-//   }, [])
-
-//   return data
-// }
-
-// const GetProfileWithVerify = () => {
-//   console.log("GETPROFILEWITHVERIFY....");
-//   const [data, setData] = useState(null)
-//   const nav = useNavigate()
-//   useEffect(() => {
-//     let ignore = false;
-//     const token = sessionStorage.getItem("Token");
-//     const intento = async () => {
-//       const peticion = await fetch('https://backendweb2-prueba-production.up.railway.app/auth/getonlyperfil', {
-//         method: 'POST',
-//         headers: {
-//           'x-access-token': token
-//         }
-//       })
-//       const res = await peticion.json()
-//       if (res.success == true) {
-//         if (!ignore) {
-//           setData(res.data)
-//         }
-//       }
-//       else {
-//         alert("Porfavor haz login antes de acceder a Perfil")
-//         nav('/home');
-//       }
-//     }
-//     intento();
-//     return () => {
-//       ignore = true;
-//     };
-//   }, [])
-
-//   return data
-// }
-
 function Main() {
   const [posts, setPosts] = useState([]) // custom hook para recibir los posts del fetch
   const [categories, setCategories] = useState(null);
@@ -91,7 +15,7 @@ function Main() {
   const obtenerPublicaciones = async () => {
     console.log("GETPOSTS......")
     const fetchresult = await (
-      await fetch('https://backendweb2-prueba-production.up.railway.app/api/posts/allposts', {
+      await fetch('http://localhost:3000/api/posts/allposts', {
         method: 'GET',
       })
     ).json();
@@ -102,7 +26,7 @@ function Main() {
   const obtenerCategorias = async () => {
     console.log("GETCATEGORYS.....");
     const fetchresult = await (
-      await fetch('https://backendweb2-prueba-production.up.railway.app/api/category/', {
+      await fetch('http://localhost:3000/api/category/', {
         method: 'GET',
       })
     ).json();
@@ -113,7 +37,7 @@ function Main() {
   const verificarPerfilYObtenerDatos = async () => {
     console.log("GETPROFILEWITHVERIFY....");
     const token = sessionStorage.getItem("Token");
-    const peticion = await fetch('https://backendweb2-prueba-production.up.railway.app/auth/getonlyperfil', {
+    const peticion = await fetch('http://localhost:3000/auth/getonlyperfil', {
       method: 'POST',
       headers: {
         'x-access-token': token

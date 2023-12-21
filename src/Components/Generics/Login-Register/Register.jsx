@@ -26,7 +26,7 @@ function Register() {
     data.append("File", _selectedfile)
 
 
-    const peticion = fetch('https://backendweb2-prueba-production.up.railway.app/auth/Register', {
+    const peticion = fetch('http://localhost:3000/auth/Register', {
       method: 'POST',
       body: data
     }).json()

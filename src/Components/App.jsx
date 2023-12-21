@@ -15,25 +15,6 @@ import { useContext, useEffect, useState } from 'react'
 import UserState from '../Context/User/user.state'
 import LoginContext from '../Context/User/user.context'
 
-
-
-// function AppHeaderLogged() {
-
-//   return (
-//     <>
-//       {/* <div className='Postproccess'></div> */}
-//       <header>
-//         <nav>
-//           <ul>
-//             <li><Link to="/home">Home</Link></li>
-//           </ul>
-//         </nav>
-//         <input type="search" name="" id="" />
-//       </header>
-//     </>
-//   )
-// }
-
 function AppHeaderLogin() {
   const { login, getLogin } = useContext(LoginContext)
 

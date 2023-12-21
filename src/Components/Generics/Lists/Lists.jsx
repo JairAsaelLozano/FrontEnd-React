@@ -10,7 +10,7 @@ function Lists() {
   const obtenerListas = async () => {
     const token = sessionStorage.getItem("Token");
     const fetchresult = await (
-      await fetch(`https://backendweb2-prueba-production.up.railway.app/api/lists/user/Lists`, {
+      await fetch(`http://localhost:3000/api/lists/user/Lists`, {
         method: 'GET',
         headers: {
           'x-access-token': token
@@ -30,7 +30,7 @@ function Lists() {
   const borrarlista = async (id) => {
     const token = sessionStorage.getItem("Token");
     const fetchresult = await (
-      await fetch(`https://backendweb2-prueba-production.up.railway.app/api/lists/user/deleteLists/${id}`, {
+      await fetch(`http://localhost:3000/api/lists/user/deleteLists/${id}`, {
         method: 'DELETE',
         headers: {
           'x-access-token': token

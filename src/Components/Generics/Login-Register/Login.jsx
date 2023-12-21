@@ -23,13 +23,12 @@ function Login() {
     data.append("Password", _password)
 
 
-    const peticion = await fetch('https://backendweb2-prueba-production.up.railway.app/auth/login', {
+    const peticion = await fetch('http://localhost:3000/auth/login', {
       method: 'POST',
       body: data
     })
     const res = await peticion.json()
 
-    // alert(JSON.stringify(res));
     sessionStorage.setItem("Token", res.token);
     sessionStorage.setItem("UserName", res.UserName);
 

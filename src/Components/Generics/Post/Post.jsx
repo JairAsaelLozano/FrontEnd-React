@@ -52,7 +52,7 @@ function Post({ isLocalUser, fndelete, srcPost, id_post}) {
   const like = async ()  => {
     const token = sessionStorage.getItem("Token");
     const fetchresult = await (
-      await fetch(`https://backendweb2-prueba-production.up.railway.app/api/posts/likePost/${id_post}`, {
+      await fetch(`http://localhost:3000/api/posts/likePost/${id_post}`, {
         method: 'PUT',
         headers: {
           'x-access-token': token
