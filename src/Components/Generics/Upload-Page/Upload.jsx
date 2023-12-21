@@ -51,7 +51,7 @@ function Upload() {
     DataToSend.append("DescriptionPost" ,description )
     DataToSend.append("File" ,selectedFile )
 
-    const peticion = await fetch('https://backendweb2-prueba-production.up.railway.app/api/posts', {
+    const peticion = await fetch('http://localhost:3000/api/posts', {
       method: 'POST',
       headers: {
         'x-access-token': token

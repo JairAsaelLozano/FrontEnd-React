@@ -11,7 +11,7 @@ const GetProfileWithVerify = () => {
     let ignore = false;
     const token = sessionStorage.getItem("Token");
     const intento = async () => {
-      const peticion = await fetch('https://backendweb2-prueba-production.up.railway.app/auth/perfil', {
+      const peticion = await fetch('http://localhost:3000/auth/perfil', {
         method: 'POST',
         headers: {
           'x-access-token': token
@@ -44,7 +44,7 @@ const GetProfileVisit = (id) =>{
   useEffect(() => {
     let ignore = false;
     const intento = async () => {
-      const peticion = await fetch(`https://backendweb2-prueba-production.up.railway.app/auth/perfil/${id}`, {
+      const peticion = await fetch(`http://localhost:3000/auth/perfil/${id}`, {
         method: 'GET'
       })
       const res = await peticion.json()
@@ -93,7 +93,7 @@ function LocalProfileOptions({ openModalfn }) {
 const deletepost = (id_post) => {
   const token = sessionStorage.getItem("Token");
   const funcion = async () => {
-    const peticion = await fetch(`https://backendweb2-prueba-production.up.railway.app/api/posts/delete/${id_post}`, {
+    const peticion = await fetch(`http://localhost:3000/api/posts/delete/${id_post}`, {
       method: 'DELETE',
       headers: {
         'x-access-token': token
